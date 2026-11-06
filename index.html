@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Donovan Chartrain — développeur web fullstack &amp; mobile et artiste 3D, auteur de LIVEX</title>
+<meta name="description" content="Page personnelle de Donovan Chartrain, développeur web fullstack &amp; mobile et artiste 3D, auteur de LIVEX, projet de recherche en simulation multi-agents. Accès au site du projet et aux portfolios.">
+<link rel="canonical" href="https://donovan-dev-web.github.io/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Donovan Chartrain — développeur web fullstack &amp; mobile et artiste 3D">
+<meta property="og:description" content="Auteur de LIVEX, projet de recherche en simulation multi-agents. Site du projet et portfolios.">
+<meta property="og:url" content="https://donovan-dev-web.github.io/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Person","@id":"https://donovan-dev-web.github.io/#auteur","name":"Donovan Chartrain","jobTitle":"Développeur web fullstack & mobile et artiste 3D","url":"https://donovan-dev-web.github.io/","sameAs":["https://donovan-dev-web.vercel.app","https://donovan-dev3d.vercel.app","https://linkedin.com/in/donovan-chartrain-dev-web","https://github.com/donovan-dev-web"]},
+{"@type":"WebSite","name":"Donovan Chartrain","url":"https://donovan-dev-web.github.io/","inLanguage":"fr","author":{"@id":"https://donovan-dev-web.github.io/#auteur"}},
+{"@type":"SoftwareApplication","name":"LIVEX","applicationCategory":"ScientificApplication","operatingSystem":"Cross-platform","description":"Projet de recherche personnel en simulation multi-agents, consacré à l’émergence collective faible : SYNE (cognition), PRISM (monde physique, cible V2), ECHOS (observation et analyse).","url":"https://donovan-dev-web.github.io/LIVEX/","author":{"@id":"https://donovan-dev-web.github.io/#auteur"},"license":"https://www.gnu.org/licenses/gpl-3.0.html","codeRepository":"https://github.com/donovan-dev-web/LIVEX"}
+]}
+</script>
+<style>
+@font-face{font-family:'Instrument Serif';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/instrument-serif-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Instrument Serif';font-style:italic;font-weight:400;font-display:swap;src:url(fonts/instrument-serif-latin-400-italic.woff2) format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/jetbrains-mono-latin-400-normal.woff2) format('woff2')}
+:root{--bg:#f2f2ec;--sf:#fafaf6;--ink:#0a0e1a;--mu:#5a6070;--ln:#cfd0c6;--gr:#e3e4db;--co:#2432e8;--ve:#cc3209;--ok:#0b7a4b;--r:2px;--w:1180px;--grid:48px;color-scheme:light}
+:root[data-theme=dark]{--bg:#090c16;--sf:#10152a;--ink:#ecede6;--mu:#9aa1b5;--ln:#2a314b;--gr:#151a2e;--co:#8a96ff;--ve:#ff7a45;--ok:#4fd39a;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 .88rem/1.7 'JetBrains Mono',ui-monospace,Menlo,monospace;background-image:linear-gradient(var(--gr) 1px,transparent 1px),linear-gradient(90deg,var(--gr) 1px,transparent 1px);background-size:var(--grid) var(--grid);min-height:100vh;overflow-wrap:break-word}
+a{color:inherit}
+img{max-width:100%;height:auto;display:block}
+h1,h2,h3{margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;line-height:1.08}
+h1{font-size:clamp(2.2rem,8.5vw,4.1rem);margin:14px 0 20px}
+h2{font-size:clamp(1.9rem,6.5vw,3.2rem);margin:16px 0 18px}
+h3{font-size:1.45rem;margin-bottom:6px}
+p{margin:0 0 1em;max-width:68ch}
+.w{max-width:var(--w);margin:0 auto;padding:0 max(20px,env(safe-area-inset-left)) 0 max(20px,env(safe-area-inset-right))}
+.mu{color:var(--mu)}
+:focus-visible{outline:2px solid var(--co);outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:0;z-index:100;background:var(--ink);color:var(--bg);padding:8px 14px;text-decoration:none}
+.skip:focus{left:8px;top:8px}
+header.site{position:sticky;top:0;z-index:9;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--ln);padding-top:env(safe-area-inset-top,0px)}
+.hb{display:flex;align-items:center;gap:14px;min-height:54px}
+.lg{text-decoration:none;font-weight:500;letter-spacing:.12em;white-space:nowrap;margin-right:auto;font-size:.8rem}
+nav{display:flex;align-items:center;gap:18px;font-size:.76rem}
+nav a{text-decoration:none;color:var(--mu)}
+nav a:hover{color:var(--ink)}
+nav a.nav-cta{border:1px solid var(--ink);padding:9px 12px;border-radius:var(--r);color:var(--ink);background:var(--bg);white-space:nowrap}
+nav a.nav-cta:hover{background:var(--ink);color:var(--bg)}
+#theme{font:inherit;line-height:1;padding:0;color:var(--mu);background:none;border:1px solid var(--ln);border-radius:var(--r);width:40px;height:40px;cursor:pointer}
+#theme:hover{color:var(--ink);border-color:var(--ink)}
+.br{position:relative}
+.br::before,.br::after{content:'';position:absolute;width:16px;height:16px;border:1.5px solid var(--ink);pointer-events:none}
+.br::before{top:-1px;left:-1px;border-right:0;border-bottom:0}
+.br::after{bottom:-1px;right:-1px;border-left:0;border-top:0}
+.sh{display:flex;align-items:center;gap:14px;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mu)}
+.sh::after{content:'';flex:1;height:1px;background:var(--ln)}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:72px 0 48px}
+.ey{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ve);margin:0}
+.lead{font-size:.98rem;max-width:58ch}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.bt{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:11px 18px;border:1px solid var(--ink);text-decoration:none;font-size:.8rem;letter-spacing:.04em;background:var(--bg);color:var(--ink);border-radius:var(--r);transition:border-color .15s,background-color .15s}
+.bt.p{background:var(--ink);color:var(--bg);padding:12px 22px;font-size:.86rem}
+.bt:hover{border-color:var(--co);color:var(--co)}
+.bt.p:hover{background:var(--co);color:#fff;border-color:var(--co)}
+.plate{background:var(--sf);border:1px solid var(--ln);padding:24px}
+.plate-h{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.plate-h img{width:44px;height:44px;flex:none}
+.plate-h b{font:400 1.7rem/1 'Instrument Serif',Georgia,serif;letter-spacing:.04em;display:block}
+.plate-h span{font-size:.68rem;color:var(--mu);display:block;line-height:1.4}
+dl{margin:0;border-top:1px solid var(--ln)}
+dl>div{display:grid;grid-template-columns:7rem 1fr;gap:12px;padding:9px 0;border-bottom:1px solid var(--ln);font-size:.78rem}
+dt{color:var(--mu)}
+dd{margin:0}
+.ok{color:var(--ok)}
+.block{padding:60px 0 4px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--ln);background:var(--sf);margin-top:26px}
+.g3>div{padding:22px;border-right:1px solid var(--ln)}
+.g3>div:last-child{border-right:0}
+.g3 p{font-size:.8rem;margin:0 0 10px;color:var(--mu)}
+.g3 .ac{font-size:.68rem;margin:0 0 10px}
+.g3 .meta{font-size:.72rem;color:var(--ink);margin:0;padding-top:10px;border-top:1px solid var(--ln)}
+.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:26px}
+.card,.box{display:block;background:var(--sf);border:1px solid var(--ln);padding:22px}
+.card{text-decoration:none;transition:border-color .15s}
+.card:hover{border-color:var(--co)}
+.card p,.box p{font-size:.8rem;color:var(--mu);margin-bottom:12px}
+.card span{font-size:.76rem;color:var(--co)}
+.box p:last-child{margin:0}
+.caps{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:30px}
+figure{margin:0;background:var(--sf);border:1px solid var(--ln)}
+figure img{width:100%;border-bottom:1px solid var(--ln)}
+figcaption{padding:12px 16px;font-size:.74rem;color:var(--mu)}
+.g3.three{margin-top:26px}
+.links{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:22px;font-size:.78rem}
+.links a{color:var(--co);padding:6px 0}
+.band{margin:64px 0 0;border:1px solid var(--ink);background:var(--sf);padding:32px;display:flex;flex-wrap:wrap;gap:22px;align-items:center;justify-content:space-between}
+.band h2{margin:0 0 6px;font-size:clamp(1.8rem,5vw,2.6rem)}
+.band p{margin:0;color:var(--mu)}
+footer{margin-top:72px;border-top:1px solid var(--ink);padding:22px 0 calc(30px + env(safe-area-inset-bottom,0px));font-size:.74rem;color:var(--mu)}
+footer .w{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:space-between}
+footer a{text-decoration:none;display:inline-block;padding:4px 0}
+footer a:hover{color:var(--co);text-decoration:underline}
+@media(max-width:860px){
+  .hero{grid-template-columns:1fr;gap:34px;padding:40px 0 36px}
+  .g3{grid-template-columns:1fr}.g3>div{border-right:0;border-bottom:1px solid var(--ln)}.g3>div:last-child{border-bottom:0}
+  .g2,.caps{grid-template-columns:1fr}
+  .block{padding-top:48px}
+}
+@media(max-width:640px){
+  body{font-size:.92rem}
+  .hb{gap:10px}
+  .lg{font-size:.74rem;letter-spacing:.08em}
+  nav a:not(.nav-cta){display:none}
+  .cta{flex-direction:column}.cta .bt{width:100%}
+  .plate{padding:20px 18px}
+  dl>div{grid-template-columns:1fr;gap:2px;padding:10px 0}
+  .band{padding:24px 20px;margin-top:48px}.band .bt{width:100%}
+  .sh{letter-spacing:.1em}
+  footer .w{flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="site">
+  <div class="w hb">
+    <a class="lg" href="/">DONOVAN CHARTRAIN</a>
+    <nav aria-label="Navigation principale">
+      <a href="#projet">Le projet</a>
+      <a href="#auteur">L’auteur</a>
+      <a href="https://github.com/donovan-dev-web">GitHub</a>
+      <a class="nav-cta" href="/LIVEX/">Site LIVEX</a>
+    </nav>
+    <button id="theme" type="button" aria-pressed="false" aria-label="Passer au thème sombre" title="Thème clair ou sombre"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" style="display:block;margin:auto"><circle cx="9" cy="9" r="6.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M9 2.5a6.5 6.5 0 0 1 0 13z" fill="currentColor"/></svg></button>
+  </div>
+</header>
+
+<main id="contenu">
+  <div class="w">
+    <section class="hero">
+      <div>
+        <p class="ey">Page personnelle de l’auteur</p>
+        <h1>Développeur web fullstack &amp; mobile, artiste 3D.</h1>
+        <p class="lead">Vous êtes sur la page de Donovan Chartrain, auteur de LIVEX, un projet personnel de recherche en simulation multi-agents. Le projet a son propre site : présentation, documentation, téléchargements et journal s’y trouvent.</p>
+        <div class="cta">
+          <a class="bt p" href="/LIVEX/">Ouvrir le site LIVEX</a>
+          <a class="bt" href="#projet">Présentation du projet</a>
+          <a class="bt" href="https://github.com/donovan-dev-web/LIVEX">Dépôt GitHub</a>
+        </div>
+      </div>
+      <aside class="plate br" aria-label="Fiche du projet LIVEX">
+        <div class="plate-h">
+          <img src="assets/livex-mark.svg" alt="" width="44" height="44">
+          <div><b>LIVEX</b><span>Living Intelligent Virtual Ecosystem eXperience</span></div>
+        </div>
+        <dl>
+          <div><dt>Nature</dt><dd>Projet de recherche personnel en simulation multi-agents</dd></div>
+          <div><dt>Question</dt><dd>Peut-on rendre observable un comportement collectif que personne n’a programmé à la main ?</dd></div>
+          <div><dt>Version</dt><dd class="ok">V1.0.0 publiée (30 octobre 2026)</dd></div>
+          <div><dt>Cible</dt><dd>V2.0.0, en préparation</dd></div>
+          <div><dt>Licences</dt><dd>GPL v3.0 ou ultérieure (code), CC BY 4.0 (textes et contenus du site)</dd></div>
+        </dl>
+      </aside>
+    </section>
+  </div>
+
+  <section class="block" id="projet">
+    <div class="w">
+      <div class="sh">Le projet</div>
+      <h2>Une archive vivante d’un monde simulé.</h2>
+      <p class="lead">Beaucoup de simulations jouent une séquence prévue : on y voit ce qu’on y a mis. LIVEX vise l’inverse. Il pose des agents, des règles et un environnement, puis laisse faire et enregistre ce qui se produit, y compris l’inattendu.</p>
+      <p>Son sujet est l’émergence collective faible : des motifs de groupe issus d’interactions locales dont les causes restent traçables. LIVEX ne prend pas l’apprentissage individuel d’un agent pour objet de recherche.</p>
+      <div class="g2">
+        <div class="box"><h3>Déterministe</h3><p>À partir de la même graine, un run se rejoue à l’identique, tick après tick. Ce qui est observé peut être vérifié et reproduit.</p></div>
+        <div class="box"><h3>Séparé</h3><p>Ce qui se passe dans le monde (le moteur) et ce qu’on en dit (l’observation) ne se confondent jamais, sous peine de raconter ce qu’on espérait voir.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="w">
+      <div class="sh">La méthode</div>
+      <h2>Trois temps, trois composants.</h2>
+      <div class="g3 br">
+        <div>
+          <h3>Simuler : SYNE</h3>
+          <p class="ac">Systems &amp; Emergent Network Engine</p>
+          <p>Moteur déterministe de simulation multi-agents : règles, monde, ticks et rejouabilité à partir d’une graine. Il porte la cognition des agents et l’horloge maîtresse.</p>
+          <p class="meta">0.17.0 · moteur .NET · expérimental</p>
+        </div>
+        <div>
+          <h3>Observer : ECHOS</h3>
+          <p class="ac">Emergent Cognition &amp; Holistic Observation System</p>
+          <p>Ingère les traces d’un run et en tire des mesures : viabilité, détection de boucles et de motifs émergents. Il observe sans jamais intervenir sur le monde.</p>
+          <p class="meta">0.1.0 · paquet Python · expérimental</p>
+        </div>
+        <div>
+          <h3>Rendre visible : PRISM</h3>
+          <p class="ac">Persistent Reality &amp; Interactive Simulation Module</p>
+          <p>Donne à voir le monde par le rendu et l’interaction. Cible V2 : monde voxel 2.5D autoritaire, noyau .NET headless et visualiseur Silk.NET facultatif.</p>
+          <p class="meta">Cible V2 · en préparation</p>
+        </div>
+      </div>
+      <p class="mu" style="margin-top:18px;font-size:.8rem">Le Launcher (0.1.0, application de bureau) orchestre les composants, et un installateur permet d’installer, de mettre à jour et de réparer LIVEX.</p>
+
+      <div class="caps">
+        <figure>
+          <img src="assets/launcher-home.webp" alt="Écran d’accueil du Launcher LIVEX : composants, état du système et dernières expériences" width="1000" height="692" loading="lazy">
+          <figcaption>Le Launcher : écran d’accueil.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/echos-agents.webp" alt="ECHOS : analyse des agents d’un run de simulation" width="1000" height="676" loading="lazy">
+          <figcaption>ECHOS : analyse des agents d’un run.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="w">
+      <div class="sh">État du projet</div>
+      <h2>Des faits datés, pas des promesses.</h2>
+      <p class="lead">Les valeurs ci-dessous décrivent l’état du dépôt, pas une promesse de publication. Les agents de LIVEX sont des entités simulées, pas des personnes, et le projet ne prétend ni prédire ni reproduire le réel.</p>
+      <dl style="margin-top:22px;background:var(--sf);padding:0 18px;border:1px solid var(--ln)">
+        <div><dt>Version publiée</dt><dd class="ok">V1.0.0, 30 octobre 2026</dd></div>
+        <div><dt>Version cible</dt><dd>V2.0.0 : PRISM refondu en autorité du monde physique, SYNE recentré sur la cognition (en préparation)</dd></div>
+        <div><dt>Tests</dt><dd>1 566 tests, dont 1 550 réussis, 16 ignorés, 0 échec (4 novembre 2026)</dd></div>
+        <div><dt>Couverture</dt><dd>ECHOS 91,32 %, SYNE 81,20 %</dd></div>
+        <div><dt>Plateformes</dt><dd>Windows validé depuis le 8 octobre 2026</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="w">
+      <div class="sh">Par où commencer</div>
+      <h2>Un chemin selon votre question.</h2>
+      <div class="g2" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))">
+        <a class="card" href="/LIVEX/comprendre/"><h3>Comprendre le projet</h3><p>Ce qu’est LIVEX, sa méthode et ce qu’il n’est pas.</p><span>Lire la présentation →</span></a>
+        <a class="card" href="/LIVEX/technique/"><h3>Vérifier la technique</h3><p>Cognition SYNE, monde PRISM, observation ECHOS et leurs contrats.</p><span>Explorer l’architecture →</span></a>
+        <a class="card" href="/LIVEX/suivre/"><h3>Suivre et contribuer</h3><p>Canaux, journal daté, contribution et signalement.</p><span>Suivre le projet →</span></a>
+      </div>
+      <div class="links">
+        <a href="/LIVEX/documentation/">Documentation</a>
+        <a href="/LIVEX/versions/">Versions</a>
+        <a href="/LIVEX/faq/">FAQ</a>
+        <a href="/LIVEX/a-propos/transparence-ia/">Transparence IA</a>
+        <a href="https://github.com/donovan-dev-web/LIVEX">Dépôt GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="auteur">
+    <div class="w">
+      <div class="sh">L’auteur</div>
+      <h2>Un profil hybride.</h2>
+      <p class="lead">Plus de 3 ans de développement web en entreprise et plus de 10 ans de design, de 3D et de production visuelle : deux faces d’un même problème, représenter un monde et construire ce qui le fait fonctionner.</p>
+      <div class="g2">
+        <a class="card" href="https://donovan-dev-web.vercel.app">
+          <h3>Portfolio web — développement</h3>
+          <p>Applications web et mobiles, architecture, stack technique et projets clients. Profil développeur fullstack &amp; mobile.</p>
+          <span>donovan-dev-web.vercel.app</span>
+        </a>
+        <a class="card" href="https://donovan-dev3d.vercel.app">
+          <h3>Portfolio 3D — création et expériences</h3>
+          <p>Direction créative, visualisation 3D, expériences interactives et supports de présentation immersifs.</p>
+          <span>donovan-dev3d.vercel.app</span>
+        </a>
+      </div>
+      <p class="mu" style="margin-top:18px;font-size:.8rem">Plus de 20 projets réalisés (sites web, applications, 3D), en contexte professionnel et personnel. Pour me contacter, utilisez le formulaire de contact de mon portfolio web.</p>
+      <div class="cta">
+        <a class="bt" href="https://donovan-dev-web.vercel.app/contact">Me contacter</a>
+        <a class="bt" href="https://linkedin.com/in/donovan-chartrain-dev-web">LinkedIn</a>
+        <a class="bt" href="https://github.com/donovan-dev-web">GitHub</a>
+      </div>
+
+      <div class="band br">
+        <div>
+          <h2>Découvrir LIVEX</h2>
+          <p>Comprendre la méthode, vérifier la technique, suivre l’avancement.</p>
+        </div>
+        <a class="bt p" href="/LIVEX/">Ouvrir le site LIVEX</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="w">
+    <span>© 2026 Donovan Chartrain. Cette page ne collecte aucune donnée.</span>
+    <span>
+      <a href="/LIVEX/mentions-legales/">Mentions légales</a> ·
+      <a href="/LIVEX/confidentialite/">Confidentialité</a> ·
+      <a href="/llms.txt">llms.txt</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var r=document.documentElement,b=document.getElementById('theme');
+  function set(t){
+    var d=t==='dark';
+    if(d){r.setAttribute('data-theme','dark')}else{r.removeAttribute('data-theme')}
+    b.setAttribute('aria-pressed',d?'true':'false');
+    b.setAttribute('aria-label',d?'Passer au thème clair':'Passer au thème sombre');
+  }
+  try{set(localStorage.getItem('theme'))}catch(e){}
+  b.addEventListener('click',function(){
+    var t=r.getAttribute('data-theme')==='dark'?'light':'dark';
+    set(t);try{localStorage.setItem('theme',t)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://donovan-dev-web.github.io/sitemap.xml
+
+# LLMs : présentation structurée pour les modèles de langage
+# https://donovan-dev-web.github.io/llms.txt
